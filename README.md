@@ -106,3 +106,13 @@ curl "http://127.0.0.1:8080/v1/items?page=2&per_page=2"
 # jq で整形
 curl -s "http://127.0.0.1:8080/v1/items?category=cat1" | jq .
 ```
+
+## Build & Run (binary)
+
+```bash
+go build -o bin/api ./cmd/api
+
+DB_DSN="demo:demo@tcp(127.0.0.1:3306)/demo?parseTime=true&charset=utf8mb4&loc=Asia%2FTokyo" \
+PORT=8080 \
+./bin/api
+```
