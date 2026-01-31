@@ -6,6 +6,5 @@ CREATE TABLE IF NOT EXISTS items (
   note TEXT NULL,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
-  INDEX idx_category_material (category, material),
-  INDEX idx_material (material)
+  KEY idx_items_cat_mat_id (category, material, id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
